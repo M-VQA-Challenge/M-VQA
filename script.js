@@ -113,49 +113,134 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const heroParticles = document.querySelector('.hero-particles');
+  let mouseX = 0;
+  let mouseY = 0;
+  let particles = [];
+  
   if (heroParticles) {
-    createParticles(heroParticles);
+    createAdvancedParticles(heroParticles);
   }
+  
+  document.addEventListener('mousemove', function(e) {
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      const rect = hero.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    }
+  });
 
-  function createParticles(container) {
-    const particleCount = 50;
+  function createAdvancedParticles(container) {
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = `
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    `;
+    container.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    let width = container.offsetWidth;
+    let height = container.offsetHeight;
+    
+    canvas.width = width;
+    canvas.height = height;
+    
+    window.addEventListener('resize', function() {
+      width = container.offsetWidth;
+      height = container.offsetHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+    
+    const particleCount = 80;
+    const connectionDistance = 150;
+    const mouseRadius = 200;
+    
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 2 + 1;
+        this.opacity = Math.random() * 0.5 + 0.2;
+        this.originalOpacity = this.opacity;
+      }
+      
+      update() {
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < mouseRadius) {
+          const force = (mouseRadius - dist) / mouseRadius;
+          this.vx -= (dx / dist) * force * 0.02;
+          this.vy -= (dy / dist) * force * 0.02;
+          this.opacity = this.originalOpacity + force * 0.3;
+        } else {
+          this.opacity = this.originalOpacity;
+        }
+        
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+        
+        this.x = Math.max(0, Math.min(width, this.x));
+        this.y = Math.max(0, Math.min(height, this.y));
+      }
+      
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.fill();
+      }
+    }
     
     for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.style.cssText = `
-        position: absolute;
-        width: ${Math.random() * 4 + 2}px;
-        height: ${Math.random() * 4 + 2}px;
-        background: rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1});
-        border-radius: 50%;
-        left: ${Math.random() * 100}%;
-        top: ${Math.random() * 100}%;
-        animation: float ${Math.random() * 10 + 10}s linear infinite;
-        animation-delay: ${Math.random() * 5}s;
-      `;
-      container.appendChild(particle);
+      particles.push(new Particle());
     }
-
-    const floatStyle = document.createElement('style');
-    floatStyle.textContent = `
-      @keyframes float {
-        0%, 100% {
-          transform: translateY(0) translateX(0);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
-          opacity: 0;
+    
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < connectionDistance) {
+            const opacity = (1 - dist / connectionDistance) * 0.15;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
         }
       }
-    `;
-    document.head.appendChild(floatStyle);
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      
+      drawConnections();
+      
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
   }
 
   const buttons = document.querySelectorAll('.btn, .nav-cta, .contact-email');
