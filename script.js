@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (dist < mouseRadius) {
           const force = (mouseRadius - dist) / mouseRadius;
-          this.vx -= (dx / dist) * force * 0.02;
-          this.vy -= (dy / dist) * force * 0.02;
+          this.vx -= (dx / dist) * force * 0.005;
+          this.vy -= (dy / dist) * force * 0.005;
           this.opacity = this.originalOpacity + force * 0.3;
         } else {
           this.opacity = this.originalOpacity;
