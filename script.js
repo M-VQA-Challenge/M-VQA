@@ -156,17 +156,17 @@ document.addEventListener('DOMContentLoaded', function() {
       canvas.height = height;
     });
     
-    const particleCount = 80;
-    const connectionDistance = 150;
+    const particleCount = 120;
+    const connectionDistance = 200;
     const mouseRadius = 200;
     
     class Particle {
       constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.radius = Math.random() * 2 + 1;
+        this.vx = (Math.random() - 0.5) * 0.2;
+        this.vy = (Math.random() - 0.5) * 0.2;
+        this.radius = Math.random() * 3 + 2;
         this.opacity = Math.random() * 0.5 + 0.2;
         this.originalOpacity = this.opacity;
       }
