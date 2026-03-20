@@ -88,22 +88,25 @@ document.addEventListener('DOMContentLoaded', function() {
   function animateCount(element, start, end, duration) {
     const startTime = performance.now();
     const hasComma = element.textContent.includes(',');
+    let animationId = null;
     
     function update(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const current = Math.floor(start + (end - start) * easeOutQuart);
+      const easeOutExpo = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.round(start + (end - start) * easeOutExpo);
       
       element.textContent = hasComma ? current.toLocaleString() : current;
       
       if (progress < 1) {
-        requestAnimationFrame(update);
+        animationId = requestAnimationFrame(update);
+      } else {
+        element.textContent = hasComma ? end.toLocaleString() : end;
       }
     }
     
-    requestAnimationFrame(update);
+    animationId = requestAnimationFrame(update);
   }
 
   const heroParticles = document.querySelector('.hero-particles');
