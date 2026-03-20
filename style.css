@@ -95,6 +95,12 @@ body {
   color: var(--primary-dark);
 }
 
+.nav-logo .logo-img {
+  height: 36px;
+  width: auto;
+  border-radius: var(--radius-sm);
+}
+
 .nav-logo i {
   font-size: 1.5rem;
   color: var(--primary);
@@ -1454,7 +1460,13 @@ body {
   margin-bottom: 8px;
 }
 
-.footer-logo i {
+.footer-logo .logo-img{
+  height: 32px;
+  width: auto;
+  border-radius: var(--radius-sm);
+}
+
+.footer-logo i{
   color: var(--primary-light);
 }
 
