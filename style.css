@@ -225,12 +225,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
-  background: white;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
   animation: fadeInDown 0.6s ease;
-  mix-blend-mode: multiply;
 }
 
 .hero-badge .acm-logo {
