@@ -1338,6 +1338,7 @@ body {
   color: var(--gray-900);
   margin-bottom: 24px;
   text-align: center;
+  font-family: var(--font-ui);
 }
 
 .organizers-list {
