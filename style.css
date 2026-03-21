@@ -1556,18 +1556,13 @@ body {
 
 .footer-links {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  justify-content: center;
 }
 
-.footer-links a {
-  color: var(--gray-400);
-  text-decoration: none;
-  font-size: 0.875rem;
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--primary-light);
+.footer-acm-logo {
+  height: 60px;
+  width: auto;
 }
 
 .footer-bottom {
