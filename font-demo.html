@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Demo - M-VQA Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Merriweather:wght@300;400;500;600;700&family=Source+Serif+4:wght@300;400;600;700&family=Lora:wght@300;400;500;600;700&family=Crimson+Text:wght@300;400;500;600;700&family=EB+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #4aa8b9;
+      min-height: 100vh;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-title p {
+      font-size: 1.125rem;
+      opacity: 0.9;
+    }
+
+    .font-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .font-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .font-name {
+      font-size: 0.875rem;
+      color: #4aa8b9;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .font-sample-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .font-sample-subtitle {
+      font-size: 1.125rem;
+      color: #475569;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .font-sample-text {
+      font-size: 0.9375rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .comparison-section {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .comparison-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .comparison-item {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .comparison-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .comparison-label {
+      font-size: 0.75rem;
+      color: #4aa8b9;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .comparison-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .comparison-subheading {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="section-title">Serif Font Options</h1>
+    <p style="text-align: center; margin-bottom: 40px;">M-VQA Challenge</p>
+
+    <!-- Font Cards Grid -->
+    <div class="font-grid">
+      <!-- Playfair Display -->
+      <div class="font-card">
+        <div class="font-name">Playfair Display</div>
+        <div class="font-sample-title" style="font-family: 'Playfair Display', serif;">
+          Machine-oriented Visual Media Quality Assessment
+        </div>
+        <div class="font-sample-subtitle" style="font-family: 'Playfair Display', serif;">
+          ACM Multimedia 2026 Workshop
+        </div>
+        <div class="font-sample-text">
+          Elegant and high-contrast serif font with a sophisticated look. Great for academic and prestigious event.
+        </div>
+      </div>
+
+      <!-- Merriweather -->
+      <div class="font-card">
+        <div class="font-name">Merriweather</div>
+        <div class="font-sample-title" style="font-family: 'Merriweather', serif;">
+          Machine-oriented Visual Media Quality Assessment
+        </div>
+        <div class="font-sample-subtitle" style="font-family: 'Merriweather', serif;">
+          ACM Multimedia 2026 Workshop
+        </div>
+        <div class="font-sample-text">
+          Designed for excellent readability on screen. Warm and friendly feel while maintaining professionalism.
+        </div>
+      </div>
+
+      <!-- Crimson Text -->
+      <div class="font-card">
+        <div class="font-name">Crimson Text</div>
+        <div class="font-sample-title" style="font-family: 'Crimson Text', serif;">
+          Machine-oriented Visual Media Quality Assessment
+        </div>
+        <div class="font-sample-subtitle" style="font-family: 'Crimson Text', serif;">
+          ACM Multimedia 2026 Workshop
+        </div>
+        <div class="font-sample-text">
+          A classic serif with a modern touch. Clean, professional, and highly readable.
+        </div>
+      </div>
+
+      <!-- EB Garamond -->
+      <div class="font-card">
+        <div class="font-name">EB Garamond</div>
+        <div class="font-sample-title" style="font-family: 'EB Garamond', serif;">
+          Machine-oriented Visual Media Quality Assessment
+        </div>
+        <div class="font-sample-subtitle" style="font-family: 'EB Garamond', serif;">
+          ACM Multimedia 2026 Workshop
+        </div>
+        <div class="font-sample-text">
+          A timeless serif with excellent readability. Classic and elegant, perfect for academic content.
+        </div>
+      </div>
+
+      <!-- Source Serif 4 -->
+      <div class="font-card">
+        <div class="font-name">Source Serif 4</div>
+        <div class="font-sample-title" style="font-family: 'Source Serif 4', serif;">
+          Machine-oriented Visual Media Quality Assessment
+        </div>
+        <div class="font-sample-subtitle" style="font-family: 'Source Serif 4', serif;">
+          ACM Multimedia 2026 Workshop
+        </div>
+        <div class="font-sample-text">
+          A modern serif designed for Adobe. Clean, versatile, and highly readable.
+        </div>
+      </div>
+
+      <!-- Lora -->
+      <div class="font-card">
+        <div class="font-name">Lora</div>
+        <div class="font-sample-title" style="font-family: 'Lora', serif;">
+          Machine-oriented Visual Media Quality Assessment
+        </div>
+        <div class="font-sample-subtitle" style="font-family: 'Lora', serif;">
+          ACM Multimedia 2026 Workshop
+        </div>
+        <div class="font-sample-text">
+          A contemporary serif with calligraphic roots. Balanced and well-proportioned.
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="comparison-section">
+      <h2 class="comparison-title">Head-to-Head Comparison</h2>
+
+      <div class="comparison-item">
+        <div class="comparison-label">Current (Inter - Sans-serif)</div>
+        <h1 class="comparison-heading" style="font-family: 'Inter', sans-serif;">
+          Machine-oriented Visual<br>Media Quality Assessment
+        </h1>
+        <p class="comparison-subheading" style="font-family: 'Inter', sans-serif;">
+          ACM Multimedia 2026 Workshop and Grand Challenge
+        </p>
+      </div>
+
+      <div class="comparison-item">
+        <div class="comparison-label">Option 1: Playfair Display</div>
+        <h1 class="comparison-heading" style="font-family: 'Playfair Display', serif;">
+          Machine-oriented Visual<br>Media Quality Assessment
+        </h1>
+        <p class="comparison-subheading" style="font-family: 'Playfair Display', serif;">
+          ACM Multimedia 2026 Workshop and Grand Challenge
+        </p>
+      </div>
+
+      <div class="comparison-item">
+        <div class="comparison-label">Option 2: Merriweather</div>
+        <h1 class="comparison-heading" style="font-family: 'Merriweather', serif;">
+          Machine-oriented Visual<br>Media Quality Assessment
+        </h1>
+        <p class="comparison-subheading" style="font-family: 'Merriweather', serif;">
+          ACM Multimedia 2026 Workshop and Grand Challenge
+        </p>
+      </div>
+
+      <div class="comparison-item">
+        <div class="comparison-label">Option 3: Source Serif 4</div>
+        <h1 class="comparison-heading" style="font-family: 'Source Serif 4', serif;">
+          Machine-oriented Visual<br>Media Quality Assessment
+        </h1>
+        <p class="comparison-subheading" style="font-family: 'Source Serif 4', serif;">
+          ACM Multimedia 2026 Workshop and Grand Challenge
+        </p>
+      </div>
+
+      <div class="comparison-item">
+        <div class="comparison-label">Option 4: Lora</div>
+        <h1 class="comparison-heading" style="font-family: 'Lora', serif;">
+          Machine-oriented Visual<br>Media Quality Assessment
+        </h1>
+        <p class="comparison-subheading" style="font-family: 'Lora', serif;">
+          ACM Multimedia 2026 Workshop and Grand Challenge
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
