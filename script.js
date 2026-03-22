@@ -112,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
     animationId = requestAnimationFrame(update);
   }
 
+  // Particle effects commented out for background image
+  /*
   const heroParticles = document.querySelector('.hero-particles');
   let mouseX = 0;
   let mouseY = 0;
@@ -242,6 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     animate();
   }
+  */
 
   const buttons = document.querySelectorAll('.btn, .nav-cta, .contact-email');
   
