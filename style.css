@@ -672,6 +672,218 @@ body {
   background: white;
 }
 
+.tracks-overview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+@media (min-width: 900px) {
+  .tracks-overview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.track-card {
+  background: var(--gray-50);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.track-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.track-number {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.track-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 16px;
+  font-family: var(--font-ui);
+  line-height: 1.4;
+}
+
+.track-card p {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.track-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.track-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.track-details li i {
+  color: var(--primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.phases-section {
+  margin-bottom: 64px;
+}
+
+.phases-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 32px;
+  font-family: var(--font-ui);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phase-card {
+  background: var(--gray-50);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  border: 1px solid var(--gray-200);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.phase-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.phase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+
+.phase-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 16px;
+  font-family: var(--font-ui);
+}
+
+.phase-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.phase-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.phase-details li i {
+  color: var(--primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.awards-section {
+  background: linear-gradient(135deg, var(--primary-50) 0%, white 100%);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  border: 1px solid var(--primary-200);
+}
+
+.awards-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 32px;
+  font-family: var(--font-ui);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.awards-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .awards-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.award-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+}
+
+.award-item i {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-top: -4px;
+  flex-shrink: 0;
+}
+
+.award-info h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+  font-family: var(--font-ui);
+}
+
+.award-info p {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin: 0;
+}
+
 .structure-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1126,7 +1338,7 @@ body {
   right: 20px;
   font-size: 4rem;
   font-weight: 800;
-  color: var(--gray-100);
+  color: var(--gray-300);
   line-height: 1;
 }
 
