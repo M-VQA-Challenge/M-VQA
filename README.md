@@ -33,15 +33,17 @@ The competition is organized into three distinct tracks:
    - Evaluation on physical robot platforms
    - Only top 10 teams from Tracks 1 and 2 are eligible
 
-### Important Dates
+### Competition Timeline
 
-- **Training/Validation Dataset Release**: February 22, 2026
-- **Test Set Release**: April 20, 2026
-- **Real-world Robot Competition Start**: May 1, 2026
-- **Competition Final Results Announcement**: June 15, 2026
-- **Paper Submission Deadline**: June 25, 2026
+- **Training & Validation Datasets Release**: February 22, 2026
+- **Test Dataset Release**: May 15, 2026
+- **Real-Robot Competition Starts**: May 30, 2026
+- **Final Competition Results Announced**: June 10, 2026
+- **Deadline for Paper Submission**: June 25, 2026
 - **Paper Acceptance Notification**: July 16, 2026
-- **Camera-Ready Deadline**: August 6, 2026
+- **Deadline for Camera-Ready Papers**: August 6, 2026
+
+> The timeline will be adjusted in accordance with the progress of the ACMMM conference.
 
 ### Additional Training Data (If you use these datasets, please adhere to the citation formats)
 
